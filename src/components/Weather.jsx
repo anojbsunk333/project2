@@ -44,7 +44,7 @@ const Weather = () => {
       <div className="search-bar">
         <input ref={inputRef} type="text" placeholder="Search" />
         <svg
-        onClick={()=>search(inputRef.current.value)}
+          onClick={() => search(inputRef.current.value)}
           className="img"
           xmlns="http://www.w3.org/2000/svg"
           width={24}
@@ -67,7 +67,7 @@ const Weather = () => {
       </p>
       <div className="weather-data">
         <div className="col">
-          <img src={humidity_icon} alt="" />
+          <img src={weatherData.icon} alt="" />
           <div>
             <p>{weatherData.humidity} %</p>
             <span>Humidity</span>
