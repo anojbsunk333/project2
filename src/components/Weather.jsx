@@ -41,33 +41,47 @@ const Weather = () => {
 
   return (
     <div className="weather">
-      <div className="search-bar">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          search(inputRef.current.value);
+        }}
+        className="search-bar"
+      >
         <input ref={inputRef} type="text" placeholder="Search" />
-        <svg
-          onClick={() => search(inputRef.current.value)}
-          className="img"
-          xmlns="http://www.w3.org/2000/svg"
-          width={24}
-          height={24}
-          viewBox="0 0 24 24"
+        <button
+          style={{
+            background: "transparent",
+            border: "none",
+            outline: "none",
+          }}
         >
-          <path
-            fill="none"
-            stroke="#000"
-            strokeLinecap="round"
-            strokeWidth={2}
-            d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"
-          ></path>
-        </svg>
-      </div>
-      <img src={sunny_icon} alt="" className="weather-icon" />
+          <svg
+            onClick={() => search(inputRef.current.value)}
+            className="img"
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="#000"
+              strokeLinecap="round"
+              strokeWidth={2}
+              d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"
+            ></path>
+          </svg>
+        </button>
+      </form>
+      <img src={weatherData.icon} alt="" className="weather-icon" />
       <p className="temperature">{weatherData.temperature}°C</p>
       <p className="location">
         {weatherData.location} "{weatherData.text}"
       </p>
       <div className="weather-data">
         <div className="col">
-          <img src={weatherData.icon} alt="" />
+          <img src={humidity_icon} alt="" />
           <div>
             <p>{weatherData.humidity} %</p>
             <span>Humidity</span>
