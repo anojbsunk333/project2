@@ -1,3 +1,7 @@
+body {
+  width: 100vw!;
+  overflow: hidden;
+}
 .weather {
   place-self: center;
   padding: 40px;
@@ -38,7 +42,7 @@
 
 .temperature {
   color: #fff;
-  font-size: 90px;
+  font-size: 10vw;
   line-height: 1;
 }
 .location {
@@ -52,6 +56,7 @@
   color: #fff;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .weather-data .col {
@@ -67,4 +72,29 @@
 .weather-data .col img {
   width: 26px;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .weather {
+    padding: 10px !important;
+  }
+
+  .search-bar input {
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding-left: 8px;
+    color: #626262;
+    background: #ebfffc;
+    font-size: 18px;
+  }
+  .search-bar .img {
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    border-radius: 6px;
+    background: #ebfffc;
+    cursor: pointer;
+  }
 }
