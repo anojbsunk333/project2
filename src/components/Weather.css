@@ -88,6 +88,7 @@ body {
     color: #626262;
     background: #ebfffc;
     font-size: 18px;
+    width: 60vw !important;
   }
   .search-bar .img {
     width: 30px;
